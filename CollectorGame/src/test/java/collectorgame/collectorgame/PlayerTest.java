@@ -1,6 +1,5 @@
+package collectorgame.collectorgame;
 
-import collectorgame.collectorgame.Player;
-import collectorgame.collectorgame.Tile;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -8,12 +7,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class gameTest {
+public class PlayerTest {
 
     Player pelaaja;
-
-    public gameTest() {
-    }
 
     @Before
     public void setUp() {
