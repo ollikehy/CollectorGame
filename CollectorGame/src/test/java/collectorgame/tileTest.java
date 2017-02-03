@@ -1,0 +1,55 @@
+package collectorgame;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class tileTest {
+    
+    public tileTest() {
+    }
+
+    @Before
+    public void setUp() {
+
+    }
+
+    @Test
+    public void ruudunXArvoEiNeg() {
+        Tile ruutu = new Tile(0, -1);
+        assertEquals(0, ruutu.getX());
+    }
+
+    @Test
+    public void ruudunYArvoEiNeg() {
+        Tile ruutu = new Tile(-1, 0);
+        assertEquals(0, ruutu.getY());
+    }
+
+    @Test
+    public void suuriX() {
+        Tile ruutu = new Tile(0, 9999);
+        assertEquals(9999, ruutu.getX());
+    }
+
+    @Test
+    public void suuriY() {
+        Tile ruutu = new Tile(9999, 0);
+        assertEquals(9999, ruutu.getY());
+    }
+    
+    @Test
+    public void onkoSeina() {
+        Tile ruutu = new Tile(0,0);
+        assertTrue(ruutu.getWall());
+    }
+    
+    @Test
+    public void onkoSeina2() {
+        Tile ruutu = new Tile(9,9);
+        assertFalse(ruutu.getWall());
+    }
+}

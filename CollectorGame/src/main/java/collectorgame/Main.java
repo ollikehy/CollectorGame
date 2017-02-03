@@ -1,4 +1,4 @@
-package collectorgame.collectorgame;
+package collectorgame;
 
 public class Main {
 

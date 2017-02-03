@@ -30,9 +30,19 @@
                 <version>3.3</version>
             </plugin>
             <plugin>
-                <groupId>org.pitest</groupId>
+                <groupId>collectorgame</groupId>
                 <artifactId>pitest-maven</artifactId>
                 <version>1.1.8</version>
+                <configuration>
+                    <targetClasses>
+                        <param>collectorgame.Player.*</param>
+                        <param>collectorgame.Tile.*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>collectorGameTest.tileTest.*</param>
+                        <param>collectorGameTest.pelaajaTest.*</param>
+                    </targetTests>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

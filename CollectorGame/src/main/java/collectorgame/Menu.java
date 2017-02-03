@@ -1,4 +1,4 @@
-package collectorgame.collectorgame;
+package collectorgame;
 
 import java.util.*;
 
@@ -10,7 +10,7 @@ public class Menu {
         scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Pelaa \n" + "Tulokset \n" + "Lopeta?");
+            System.out.println("Pelaa \n" + "Tulokset \n" + "Tulosta \n" + "Lopeta?");
             System.out.print(">");
             String vastaus = scanner.nextLine();
             if (vastaus.toLowerCase().equals("pelaa")) {
@@ -22,6 +22,8 @@ public class Menu {
             } else if (vastaus.toLowerCase().equals("lopeta")) {
                 System.out.println("Moikka pitää mennä");
                 break;
+            } else if (vastaus.toLowerCase().equals("tulosta")) {
+                printMap();
             } else {
                 System.out.println("Komentoa ei tunnistettu, yritä uudelleen");
                 System.out.println("");
@@ -34,8 +36,15 @@ public class Menu {
         peli.start();
     }
 
-    public static void score() {
-        //tee jotain
+    public void score() {
+        //tulosta huipputulokset
+    }
+    
+    public void printMap() {
+        System.out.println("");
+        CollectorGame peli = new CollectorGame(scanner);
+        peli.printMap();
+        System.out.println("\n Tässä on esimerkkikartta, oikeassa pelissä esineiden sijainnit ovat erilaiset \n"); 
     }
 
 }
