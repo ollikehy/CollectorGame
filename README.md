@@ -5,3 +5,8 @@ Javalabran työ, tarkoituksena luoda peli jossa pelaaja liikuttaa "hahmoa" reiti
 [Tarkempi aihekuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
 
 [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+
+[checkstyle](https://htmlpreview.github.io/?https://github.com/ollikehy/CollectorGame/blob/master/dokumentaatio/checkstyle/checkstyle.html)
+
+[pit-raportti](https://htmlpreview.github.io/?https://github.com/ollikehy/CollectorGame/blob/master/dokumentaatio/pit/201702031543/index.html)
+Testattavat luokat: Player, Tile, CollectorGame (osa metodeista).
