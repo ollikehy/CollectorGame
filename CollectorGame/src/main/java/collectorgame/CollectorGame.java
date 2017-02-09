@@ -5,10 +5,8 @@ import java.util.*;
 class CollectorGame {
 
     public Tile[][] map;
-    public Scanner scanner;
 
-    CollectorGame(Scanner scanner) {
-        this.scanner = scanner;
+    CollectorGame() {
     }
 
     public void printMap() {
@@ -18,7 +16,7 @@ class CollectorGame {
                 if (map[y][x].getWall() == true) {
                     System.out.print("[]");
                 } else if (map[y][x].getItem() == true) {
-                    System.out.print("**");
+                    System.out.print("db");
                 } else {
                     System.out.print("  ");
                 }
@@ -50,5 +48,5 @@ class CollectorGame {
     public Tile[][] getMap() {
         return this.map;
     }
-    
+
 }

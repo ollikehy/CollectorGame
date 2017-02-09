@@ -18,7 +18,7 @@ public class collectorgameTest {
 
     @Before
     public void setUp() {
-        this.peli = new CollectorGame(new Scanner(System.in));
+        this.peli = new CollectorGame();
         peli.createMap();
         this.map = peli.getMap();
     }
