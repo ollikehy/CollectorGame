@@ -4,33 +4,65 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/** 
+ * Luokka on pelin päävalikko, mikä käynnistyy Main-luokasta.
+ * Päävalikossa käyttäjä pystyy valitsemaan haluamansa toiminnon.
+ * @author keolli
+ */
+
 public class Menu {
 
     private JFrame menuFrame;
     private JLabel headerLabel;
     private JPanel controlPanel;
 
+    /**
+     * Metodi valmistelee graafisen käyttöliittymän ja lisää siihen painikkeet.
+     */
+    
     public void start() {
         prepareGui();
         addButtons();
     }
 
+    /**
+    * Metodi käynnistää itse pelin luomalla ensin CollectorGame olion ja sen jälkeen asettamalla sen näkyviin.
+    * Metodi myös käynnistää pelin sen play() metodilla.
+    */
+    
     public void gameOn() {
-        CollectorGame peli = new CollectorGame();
-        peli.start();
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                CollectorGame peli = new CollectorGame();
+                peli.setVisible(true);
+                peli.play();
+            }
+        });
     }
-
+    /**
+     * Tulevaisuudessa tämä metodi avaa uuden ikkunan jossa näkyy huipputulokset.
+     */
     public void score() {
         //tulosta huipputulokset
     }
 
+    /**
+     * Metodi avaa uuden ikkunan jossa näkyy mallikartta ilman, että itse peli alkaa.
+     */
     public void printMap() {
-        System.out.println("");
-        CollectorGame peli = new CollectorGame();
-        peli.printMap();
-        System.out.println("\n Tässä on esimerkkikartta, oikeassa pelissä esineiden sijainnit ovat erilaiset \n");
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                CollectorGame peli = new CollectorGame(true);
+                peli.setVisible(true);
+            }
+        });
     }
 
+    /**
+     * Metodi valmistelee päävalikon luomalla JFramen.
+     */
     public void prepareGui() {
 
         menuFrame = new JFrame("CollectorGame");
@@ -50,6 +82,10 @@ public class Menu {
         menuFrame.add(controlPanel);
     }
 
+    /**
+     * Metodi lisää valintapainikkeet päävalikkoon.
+     */
+    
     public void addButtons() {
         headerLabel.setText("Päävalikko");
         JButton playButton = new JButton("Pelaa");
@@ -57,7 +93,7 @@ public class Menu {
         JButton mapButton = new JButton("Kartta");
         JButton endButton = new JButton("Lopeta");
 
-        playButton.setActionCommand("OK");
+        playButton.setActionCommand("PLAY");
         scoreButton.setActionCommand("SCORE");
         mapButton.setActionCommand("MAP");
         endButton.setActionCommand("END");
@@ -72,9 +108,13 @@ public class Menu {
         controlPanel.add(mapButton);
         controlPanel.add(endButton);
 
+        menuFrame.setLocationRelativeTo(null);
         menuFrame.setVisible(true);
     }
-
+    /**
+     * Metodi lisää nappien painallusta seuraavan ominaisuuden nappeihin.
+     * Tämän jälkeen napit toimivat tarkoitetulla tavalla.
+     */
     private class ButtonClickListener implements ActionListener {
 
         @Override

@@ -18,9 +18,9 @@ public class collectorgameTest {
 
     @Before
     public void setUp() {
-        this.peli = new CollectorGame();
-        peli.createMap();
-        this.map = peli.getMap();
+        Board b = new Board();
+        b.createMap();
+        this.map = b.getMap();
     }
 
     @Test

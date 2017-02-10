@@ -34,14 +34,11 @@
                 <artifactId>pitest-maven</artifactId>
                 <version>1.1.8</version>
                 <configuration>
-                    <targetClasses>
-                        <param>collectorgame.Player.*</param>
-                        <param>collectorgame.Tile.*</param>
-                    </targetClasses>
-                    <targetTests>
-                        <param>collectorGameTest.tileTest.*</param>
-                        <param>collectorGameTest.pelaajaTest.*</param>
-                    </targetTests>
+                    <excludedClasses>
+                        <excludedClass>collectorgame.Main</excludedClass>
+                        <excludedClass>collectorgame.Menu</excludedClass>
+                        <excludedClass>collectorgame.Board</excludedClass>
+                    </excludedClasses>
                 </configuration>
             </plugin>
             <plugin>

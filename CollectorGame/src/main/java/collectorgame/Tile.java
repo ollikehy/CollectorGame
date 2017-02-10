@@ -1,14 +1,25 @@
 package collectorgame;
 
 import java.util.Random;
-
+/**
+ * Luokka Tile vastaa siitä, että ruudut ovat oikeassa paikassa.
+ * Luokassa myös huolehditaan siitä että ruudut tietävät olevansa seiniä tai sisältävänsä esineitä.
+ * @author keolli
+ */
 public class Tile {
 
     public int x;
     public int y;
     public boolean wall;
     public boolean item;
+    public boolean player;
 
+    /**
+     * Konstruktori luo ruudun ja asettaa ensimmäiseen ruutuun pelaajan.
+     * @param y Kertoo ruudun sijainnin y-akselilla.
+     * @param x Kertoo ruudun sijainnin x-akselilla.
+     */
+    
     public Tile(int y, int x) {
         if (x >= 0 && y >= 0) {
             this.x = x;
@@ -16,6 +27,11 @@ public class Tile {
         } else {
             this.x = 0;
             this.y = 0;
+        }
+        if (this.x == 1 && this.y == 0) {
+            this.player = true;
+        } else {
+            this.player = false;
         }
         spawnItem();
         checkTile();
@@ -28,21 +44,30 @@ public class Tile {
     public int getY() {
         return this.y;
     }
+    
+    /**
+     * Arpoo tuleeko ruutuun esinettä vai ei.
+     */
 
     public void spawnItem() {
         Random r = new Random();
         int i = r.nextInt(5);
         if (i == 4) {
-            this.item = true;
+            if (this.y < 11 && this.y > 0) {
+                this.item = true;
+            }
         } else {
             this.item = false;
         }
     }
+    
+    /**
+     * Tarkistaa ruudun sijainnin ja jos se on seinä muuttaa booleanin wall arvon trueksi.
+     */
 
     private void checkTile() {
-        //tarkistaa onko ruutu seinä ja jos on muuttaa booleanin wall trueksi;
         if (this.x == 0) {
-           this.wall = true;
+            this.wall = true;
         } else if (this.x % 2 == 0 && this.y != 9 && this.x % 4 != 0) {
             this.wall = true;
         } else if (this.x % 4 == 0 && this.y != 1) {
@@ -50,18 +75,21 @@ public class Tile {
         } else if (this.y == 10 && this.x != 21) {
             this.wall = true;
         } else if (this.x == 22) {
-            this.wall = true; 
+            this.wall = true;
         } else if (this.y == 0 && this.x != 1) {
             this.wall = true;
         }
     }
-    
+
     public boolean getWall() {
         return this.wall;
     }
-    
+
     public boolean getItem() {
         return this.item;
     }
-    
+
+    public boolean getPlayer() {
+        return this.player;
+    }
 }

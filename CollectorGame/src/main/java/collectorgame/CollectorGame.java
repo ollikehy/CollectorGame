@@ -1,52 +1,57 @@
 package collectorgame;
 
-import java.util.*;
+import collectorgame.Board;
+import javax.swing.JFrame;
 
-class CollectorGame {
+/**
+ * Luokka on itse peli, missä tällä hetkellä ainoa toiminnallisuus on pelikentän
+ * luominen.
+ *
+ * @author keolli
+ */
+public class CollectorGame extends JFrame {
 
-    public Tile[][] map;
-
-    CollectorGame() {
+    /**
+     * Konstruktori luo UI:n.
+     */
+    public CollectorGame() {
+        initUI();
     }
 
-    public void printMap() {
-        createMap();
-        for (int y = 0; y < 11; y++) {
-            for (int x = 0; x < 23; x++) {
-                if (map[y][x].getWall() == true) {
-                    System.out.print("[]");
-                } else if (map[y][x].getItem() == true) {
-                    System.out.print("db");
-                } else {
-                    System.out.print("  ");
-                }
-            }
-            System.out.println("");
-        }
+    /**
+     * Tämä konstruktori on kartan luomista varten.
+     *
+     * @param esim huolehtii siitä, että ainoa toiminnallisuus on tosiaan kartan
+     * luominen
+     */
+    public CollectorGame(boolean esim) {
+        initUI();
     }
 
+    /**
+     * Metodi luo hahmon ja käynnistää pelin.
+     */
     public void start() {
         Player hahmo = new Player();
-        createMap();
         play();
     }
 
-    public void createMap() {
-        Tile kartta[][] = new Tile[30][30];
-        for (int y = 0; y < 11; y++) {
-            for (int x = 0; x < 23; x++) {
-                kartta[y][x] = new Tile(y, x);
-            }
-        }
-        this.map = kartta;
+    /**
+     * Luo UI:n.
+     */
+    private void initUI() {
+        add(new Board());
+        setSize(690, 350);
+        setTitle("Collector Game");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
     }
 
+    /**
+     * Tulevaisuudessa pelin toiminnallisuus tapahtuu tässä metodissa.
+     * Esimerkiksi hahmon liikkuminen ja esineiden poimiminen.
+     */
     public void play() {
         //pelin toteutus
     }
-
-    public Tile[][] getMap() {
-        return this.map;
-    }
-
 }

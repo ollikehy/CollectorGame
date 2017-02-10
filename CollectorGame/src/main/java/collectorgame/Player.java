@@ -1,5 +1,10 @@
 package collectorgame;
 
+/**
+ * Pelaajaluokka seuraa pelaajan pisteitä ja sijaintia.
+ * @author keolli
+ */
+
 public class Player {
 
     public int score;

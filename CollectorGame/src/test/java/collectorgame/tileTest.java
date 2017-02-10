@@ -42,14 +42,20 @@ public class tileTest {
     }
     
     @Test
-    public void onkoSeina() {
+    public void onkoSeinaOikeassaReunassa() {
         Tile ruutu = new Tile(0,0);
         assertTrue(ruutu.getWall());
     }
     
     @Test
-    public void onkoSeina2() {
+    public void onkoSeinaKeskellaKarttaaOikein() {
         Tile ruutu = new Tile(9,9);
         assertFalse(ruutu.getWall());
+    }
+    
+    @Test
+    public void pelaajaLoytyyAlkuruudusta() {
+        Tile ruutu = new Tile(0,1);
+        assertTrue(ruutu.getPlayer());
     }
 }
