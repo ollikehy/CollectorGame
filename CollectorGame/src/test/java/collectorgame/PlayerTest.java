@@ -7,11 +7,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class playerTest {
+public class PlayerTest {
 
     Player pelaaja;
 
-    public playerTest() {
+    public PlayerTest() {
     }
 
     @Before

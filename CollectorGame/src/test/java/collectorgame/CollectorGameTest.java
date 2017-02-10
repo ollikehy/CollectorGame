@@ -8,12 +8,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class collectorgameTest {
+public class CollectorGameTest {
 
     CollectorGame peli;
     Tile[][] map;
 
-    public collectorgameTest() {
+    public CollectorGameTest() {
     }
 
     @Before

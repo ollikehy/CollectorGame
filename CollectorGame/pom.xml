@@ -30,11 +30,12 @@
                 <version>3.3</version>
             </plugin>
             <plugin>
-                <groupId>collectorgame</groupId>
+                <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
                 <version>1.1.8</version>
                 <configuration>
                     <excludedClasses>
+                        <excludedClass>collectorgame.CollectorGame</excludedClass>
                         <excludedClass>collectorgame.Main</excludedClass>
                         <excludedClass>collectorgame.Menu</excludedClass>
                         <excludedClass>collectorgame.Board</excludedClass>
@@ -56,6 +57,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>

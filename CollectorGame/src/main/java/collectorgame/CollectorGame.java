@@ -1,6 +1,5 @@
 package collectorgame;
 
-import collectorgame.Board;
 import javax.swing.JFrame;
 
 /**
