@@ -10,6 +10,10 @@ import javax.swing.JFrame;
  */
 public class CollectorGame extends JFrame {
 
+    public Player hahmo;
+    public Board board;
+    public Tile[][] map;
+
     /**
      * Konstruktori luo UI:n.
      */
@@ -31,26 +35,18 @@ public class CollectorGame extends JFrame {
      * Metodi luo hahmon ja käynnistää pelin.
      */
     public void start() {
-        Player hahmo = new Player();
-        play();
+        this.map = board.getMap();
     }
 
     /**
      * Luo UI:n.
      */
     private void initUI() {
-        add(new Board());
+        this.board = new Board();
+        add(board);
         setSize(690, 350);
         setTitle("Collector Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-    }
-
-    /**
-     * Tulevaisuudessa pelin toiminnallisuus tapahtuu tässä metodissa.
-     * Esimerkiksi hahmon liikkuminen ja esineiden poimiminen.
-     */
-    public void play() {
-        //pelin toteutus
     }
 }

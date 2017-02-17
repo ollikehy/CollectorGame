@@ -1,9 +1,12 @@
 package collectorgame;
 
 import java.util.Random;
+
 /**
- * Luokka Tile vastaa siitä, että ruudut ovat oikeassa paikassa.
- * Luokassa myös huolehditaan siitä että ruudut tietävät olevansa seiniä tai sisältävänsä esineitä.
+ * Luokka Tile vastaa siitä, että ruudut ovat oikeassa paikassa. Luokassa myös
+ * huolehditaan siitä että ruudut tietävät olevansa seiniä tai sisältävänsä
+ * esineitä.
+ *
  * @author keolli
  */
 public class Tile {
@@ -16,10 +19,10 @@ public class Tile {
 
     /**
      * Konstruktori luo ruudun ja asettaa ensimmäiseen ruutuun pelaajan.
+     *
      * @param y Kertoo ruudun sijainnin y-akselilla.
      * @param x Kertoo ruudun sijainnin x-akselilla.
      */
-    
     public Tile(int y, int x) {
         if (x >= 0 && y >= 0) {
             this.x = x;
@@ -44,11 +47,10 @@ public class Tile {
     public int getY() {
         return this.y;
     }
-    
+
     /**
      * Arpoo tuleeko ruutuun esinettä vai ei.
      */
-
     public void spawnItem() {
         Random r = new Random();
         int i = r.nextInt(5);
@@ -60,11 +62,11 @@ public class Tile {
             this.item = false;
         }
     }
-    
-    /**
-     * Tarkistaa ruudun sijainnin ja jos se on seinä muuttaa booleanin wall arvon trueksi.
-     */
 
+    /**
+     * Tarkistaa ruudun sijainnin ja jos se on seinä muuttaa booleanin wall
+     * arvon trueksi.
+     */
     private void checkTile() {
         if (this.x == 0) {
             this.wall = true;
@@ -91,5 +93,21 @@ public class Tile {
 
     public boolean getPlayer() {
         return this.player;
+    }
+
+    /**
+     * Poistaa ruudulta esineen.
+     */
+    public void removeItem() {
+        this.item = false;
+    }
+
+    /**
+     * Asettaa ruutuun pelaajan tai poistaa pelaajan ruudusta.
+     *
+     * @param arvo Määrittelee asetetaanko pelaaja vai poistetaanko pelaaja.
+     */
+    public void setOrRemovePlayer(boolean arvo) {
+        this.player = arvo;
     }
 }

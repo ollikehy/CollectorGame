@@ -8,3 +8,4 @@ Päivä | Tunnit | Kuvaus
 3.02.2017 | 4h | Pitin toiminnan korjaus, ohjelmoinnin ja testaamisen jatkaminen sekä muut DL3 asiat.
 9.02.2017 | 2h | Swingin opettelua, sekä laitoin päävalikolle graafisen toiminnallisuuden kuntoon.
 10.02.2017 | 4,5h | Pelikentän tekemistä ja muutamien tominnallisuuksien muokkaamista. Pit korjattu siten, että enää näkyvät vain testattavat luokat.
+17.02.2017 | 5h | Hahmon liikkuminen, esineiden poimiminen ja muutama muu toiminnallisuus kuntoon. Pit näyttää edelleen muutaman luokan jota ei testata ja joissain luokissa testattavia metodeja on vain pieni osa.

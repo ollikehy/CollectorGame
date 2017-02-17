@@ -1,29 +1,46 @@
 package collectorgame;
 
-import collectorgame.Tile;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 /**
  * Luokka luo pelikentän.
  *
  * @author keolli
  */
-public class Board extends JPanel {
+public class Board extends JPanel implements ActionListener {
 
-    Tile[][] map;
+    public Tile[][] map;
+    public Player hahmo;
+    private Timer timer;
 
     /**
      * Konstruktori kutsuu ensin metodia joka luo kartan. Asettaa myös ruudun
      * taustan valkoiseksi.
      */
     public Board() {
+        initBoard();
+    }
+
+    private void initBoard() {
         createMap();
+        this.hahmo = new Player(this.map);
         setBackground(Color.white);
+
+        setFocusable(true);
+        addKeyListener(new TAdapter());
+
+        this.timer = new Timer(150, this);
+        timer.start();
     }
 
     /**
@@ -34,7 +51,7 @@ public class Board extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        drawBackground(g);
+        drawMap(g);
     }
 
     /**
@@ -42,7 +59,7 @@ public class Board extends JPanel {
      *
      * @param g On Javan abstrakti grafiikka-luokka.
      */
-    private void drawBackground(Graphics g) {
+    public void drawMap(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
 
         RenderingHints rh = new RenderingHints(
@@ -103,4 +120,32 @@ public class Board extends JPanel {
     public Tile[][] getMap() {
         return this.map;
     }
+
+    /**
+     * Hakee hahmolta kartan joka on uudempi kuin luokan nykyinen oma kartta.
+     */
+    public void updateMap() {
+        this.map = hahmo.returnMap();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        hahmo.updatePosition();
+        updateMap();
+        repaint();
+    }
+
+    private class TAdapter extends KeyAdapter {
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            hahmo.keyReleased(e);
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            hahmo.keyPressed(e);
+        }
+    }
+
 }

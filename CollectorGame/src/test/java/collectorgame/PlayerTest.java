@@ -40,19 +40,4 @@ public class PlayerTest {
         pelaaja.addScore(-1000);
         assertEquals(0, pelaaja.getScore());
     }
-
-    @Test
-    public void xEiVoiOllaNeg() {
-        pelaaja.movePlayerLeft();
-        pelaaja.movePlayerLeft();
-        assertEquals("0,0", pelaaja.getLocation());
-    }
-
-    @Test
-    public void yEiVoiOllaNeg() {
-        pelaaja.movePlayerUp();
-        pelaaja.movePlayerUp();
-        assertEquals("1,0", pelaaja.getLocation());
-    }
-
 }

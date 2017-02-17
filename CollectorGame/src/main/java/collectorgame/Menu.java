@@ -36,7 +36,6 @@ public class Menu {
             public void run() {
                 CollectorGame peli = new CollectorGame();
                 peli.setVisible(true);
-                peli.play();
             }
         });
     }
@@ -71,6 +70,7 @@ public class Menu {
 
         headerLabel = new JLabel("", JLabel.CENTER);
         menuFrame.addWindowListener(new WindowAdapter() {
+            @Override
             public void windowClosing(WindowEvent windowEvent) {
                 System.exit(0);
             }
