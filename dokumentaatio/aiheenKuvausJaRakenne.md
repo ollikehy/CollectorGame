@@ -14,8 +14,8 @@
 
 **Sekvenssikaavio tilanteesta, missä käyttäjä haluaa tarkastella karttaa**
 
-![Sekvenssi1]((https://raw.githubusercontent.com/ollikehy/CollectorGame/master/dokumentaatio/sekvenssi1.jpg)
+![Sekvenssi1](https://raw.githubusercontent.com/ollikehy/CollectorGame/master/dokumentaatio/sekvenssi1.JPG)
 
 **Sekvenssikaavio tilanteesta, missä käyttäjä pelaa peliä**
 
-![Sekvenssi2]((https://raw.githubusercontent.com/ollikehy/CollectorGame/master/dokumentaatio/sekvenssi2.png)
+![Sekvenssi2](https://raw.githubusercontent.com/ollikehy/CollectorGame/master/dokumentaatio/sekvenssi2.JPG)
