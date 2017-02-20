@@ -1,15 +1,20 @@
-package collectorgame;
+package collectorgameUI;
 
+import collectorgameLogic.CollectorGame;
+import static com.sun.corba.se.impl.util.Utility.printStackTrace;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
-/** 
- * Luokka on pelin päävalikko, mikä käynnistyy Main-luokasta.
- * Päävalikossa käyttäjä pystyy valitsemaan haluamansa toiminnon.
+/**
+ * Luokka on pelin päävalikko, mikä käynnistyy Main-luokasta. Päävalikossa
+ * käyttäjä pystyy valitsemaan haluamansa toiminnon.
+ *
  * @author keolli
  */
-
 public class Menu {
 
     private JFrame menuFrame;
@@ -19,17 +24,16 @@ public class Menu {
     /**
      * Metodi valmistelee graafisen käyttöliittymän ja lisää siihen painikkeet.
      */
-    
     public void start() {
         prepareGui();
         addButtons();
     }
 
     /**
-    * Metodi käynnistää itse pelin luomalla ensin CollectorGame olion ja sen jälkeen asettamalla sen näkyviin.
-    * Metodi myös käynnistää pelin sen play() metodilla.
-    */
-    
+     * Metodi käynnistää itse pelin luomalla ensin CollectorGame olion ja sen
+     * jälkeen asettamalla sen näkyviin. Metodi myös käynnistää pelin sen play()
+     * metodilla.
+     */
     public void gameOn() {
         EventQueue.invokeLater(new Runnable() {
             @Override
@@ -39,24 +43,21 @@ public class Menu {
             }
         });
     }
+
     /**
-     * Tulevaisuudessa tämä metodi avaa uuden ikkunan jossa näkyy huipputulokset.
+     * Tulevaisuudessa tämä metodi avaa uuden ikkunan jossa näkyy
+     * huipputulokset.
      */
     public void score() {
         //tulosta huipputulokset
     }
 
     /**
-     * Metodi avaa uuden ikkunan jossa näkyy mallikartta ilman, että itse peli alkaa.
+     * Metodi avaa uuden ikkunan jossa näkyy mallikartta ilman, että itse peli
+     * alkaa.
      */
-    public void printMap() {
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                CollectorGame peli = new CollectorGame(true);
-                peli.setVisible(true);
-            }
-        });
+    public void printMap() throws IOException {
+        Map map = new Map();
     }
 
     /**
@@ -85,7 +86,6 @@ public class Menu {
     /**
      * Metodi lisää valintapainikkeet päävalikkoon.
      */
-    
     public void addButtons() {
         headerLabel.setText("Päävalikko");
         JButton playButton = new JButton("Pelaa");
@@ -110,10 +110,12 @@ public class Menu {
 
         menuFrame.setLocationRelativeTo(null);
         menuFrame.setVisible(true);
+
     }
+
     /**
-     * Metodi lisää nappien painallusta seuraavan ominaisuuden nappeihin.
-     * Tämän jälkeen napit toimivat tarkoitetulla tavalla.
+     * Metodi lisää nappien painallusta seuraavan ominaisuuden nappeihin. Tämän
+     * jälkeen napit toimivat tarkoitetulla tavalla.
      */
     private class ButtonClickListener implements ActionListener {
 
@@ -125,7 +127,11 @@ public class Menu {
             } else if (command.equals("SCORE")) {
                 score();
             } else if (command.equals("MAP")) {
-                printMap();
+                try {
+                    printMap();
+                } catch (IOException ex) {
+                    printStackTrace();
+                }
             } else if (command.equals("END")) {
                 System.exit(0);
             }

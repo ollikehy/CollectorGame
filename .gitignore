@@ -1,6 +1,3 @@
 /CollectorGame/target/
 /CollectorGame/nbproject/
-/CollectorGame/README.md~
-/CollectorGame/dokumentaatio/aiheenKuvausJaRakenne.md~
-/CollectorGame/dokumentaatio/tuntikirjanpito.md~
-/CollectorGame/dokumentaatio/checkstyle/checkstyle.xml~
+*.md~

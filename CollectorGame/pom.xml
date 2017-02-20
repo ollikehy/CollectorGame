@@ -35,10 +35,11 @@
                 <version>1.1.8</version>
                 <configuration>
                     <excludedClasses>
-                        <excludedClass>collectorgame.CollectorGame</excludedClass>
-                        <excludedClass>collectorgame.Main</excludedClass>
-                        <excludedClass>collectorgame.Menu</excludedClass>
-                        <excludedClass>collectorgame.Board</excludedClass>
+                        <excludedClass>collectorgameLogic.CollectorGame</excludedClass>
+                        <excludedClass>collectorgameLogic.Main</excludedClass>
+                        <excludedClass>collectorgameUI.Menu</excludedClass>
+                        <excludedClass>collectorgameUI.Board</excludedClass>
+                        <excludedClass>collectorgameUI.Map</excludedClass>
                     </excludedClasses>
                 </configuration>
             </plugin>

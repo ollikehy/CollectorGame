@@ -1,4 +1,6 @@
-package collectorgame;
+package collectorgameLogic;
+
+import collectorgameUI.Menu;
 
 public class Main {
 

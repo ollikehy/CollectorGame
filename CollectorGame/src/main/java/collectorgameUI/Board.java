@@ -1,5 +1,7 @@
-package collectorgame;
+package collectorgameUI;
 
+import collectorgameLogic.Player;
+import collectorgameLogic.Tile;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -20,7 +22,7 @@ import javax.swing.Timer;
 public class Board extends JPanel implements ActionListener {
 
     public Tile[][] map;
-    public Player hahmo;
+    public Player player;
     private Timer timer;
 
     /**
@@ -33,13 +35,13 @@ public class Board extends JPanel implements ActionListener {
 
     private void initBoard() {
         createMap();
-        this.hahmo = new Player(this.map);
+        this.player = new Player(this.map);
         setBackground(Color.white);
 
         setFocusable(true);
         addKeyListener(new TAdapter());
 
-        this.timer = new Timer(150, this);
+        this.timer = new Timer(70, this);
         timer.start();
     }
 
@@ -125,12 +127,12 @@ public class Board extends JPanel implements ActionListener {
      * Hakee hahmolta kartan joka on uudempi kuin luokan nykyinen oma kartta.
      */
     public void updateMap() {
-        this.map = hahmo.returnMap();
+        this.map = player.returnMap();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        hahmo.updatePosition();
+        player.updatePosition();
         updateMap();
         repaint();
     }
@@ -139,12 +141,12 @@ public class Board extends JPanel implements ActionListener {
 
         @Override
         public void keyReleased(KeyEvent e) {
-            hahmo.keyReleased(e);
+            player.keyReleased(e);
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
-            hahmo.keyPressed(e);
+            player.keyPressed(e);
         }
     }
 

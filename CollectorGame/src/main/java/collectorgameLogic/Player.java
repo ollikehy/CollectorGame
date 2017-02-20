@@ -1,4 +1,4 @@
-package collectorgame;
+package collectorgameLogic;
 
 import java.awt.event.KeyEvent;
 
