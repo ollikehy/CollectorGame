@@ -47,7 +47,7 @@ public class CollectorGame extends JFrame {
         add(board);
         setSize(690, 350);
         setTitle("Collector Game");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
     }
 }
