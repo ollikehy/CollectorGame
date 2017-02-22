@@ -41,7 +41,7 @@ public class Board extends JPanel implements ActionListener {
         setFocusable(true);
         addKeyListener(new TAdapter());
 
-        this.timer = new Timer(70, this);
+        this.timer = new Timer(150, this);
         timer.start();
     }
 

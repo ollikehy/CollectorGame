@@ -1,8 +1,6 @@
 package collectorgameUI;
 
-import static com.sun.corba.se.impl.util.Utility.printStackTrace;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;

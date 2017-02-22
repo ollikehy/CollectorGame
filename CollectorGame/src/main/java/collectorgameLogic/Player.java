@@ -49,7 +49,7 @@ public class Player {
      * Liikuttaa pelaajaa vasemmalle.
      */
     public void movePlayerLeft() {
-        if (this.x - 1 >= 0 && !map[this.y][this.x - 1].wall) {
+        if (this.x - 1 > 0 && !map[this.y][this.x - 1].getWall()) {
             dx = -1;
         } else {
             this.score -= 50;
@@ -59,7 +59,7 @@ public class Player {
      * Liikuttaa pelaajaa oikealle.
      */
     public void movePlayerRight() {
-        if (this.x + 1 <= 22 && !map[this.y][this.x + 1].wall) {
+        if (this.x + 1 < 22 && !map[this.y][this.x + 1].getWall()) {
             dx = 1;
         } else {
             this.score -= 50;
@@ -69,7 +69,7 @@ public class Player {
      * Liikuttaa pelaajaa ylös.
      */
     public void movePlayerUp() {
-        if (this.y - 1 >= 0 && !map[this.y - 1][this.x].wall) {
+        if (this.y - 1 > 0 && !map[this.y - 1][this.x].getWall()) {
             dy = -1;
         } else {
             this.score -= 50;
@@ -79,7 +79,7 @@ public class Player {
      * Liikuttaa pelaajaa alas.
      */
     public void movePlayerDown() {
-        if (this.y + 1 <= 11 && !map[this.y + 1][this.x].wall) {
+        if (this.y + 1 < 11 && !map[this.y + 1][this.x].getWall()) {
             dy = 1;
         } else {
             this.score -= 50;
