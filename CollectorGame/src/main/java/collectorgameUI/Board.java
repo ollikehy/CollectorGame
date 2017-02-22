@@ -4,6 +4,7 @@ import collectorgameLogic.Player;
 import collectorgameLogic.Tile;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -11,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -24,6 +26,7 @@ public class Board extends JPanel implements ActionListener {
     public Tile[][] map;
     public Player player;
     private Timer timer;
+    private JLabel scoreLabel;
 
     /**
      * Konstruktori kutsuu ensin metodia joka luo kartan. Asettaa myös ruudun
@@ -41,8 +44,12 @@ public class Board extends JPanel implements ActionListener {
         setFocusable(true);
         addKeyListener(new TAdapter());
 
+        setLayout(new FlowLayout());
+
         this.timer = new Timer(130, this);
         timer.start();
+
+        addFooter();
     }
 
     /**
@@ -135,6 +142,16 @@ public class Board extends JPanel implements ActionListener {
         player.updatePosition();
         updateMap();
         repaint();
+    }
+    
+    /**
+     * Luodaan alas pisteet ja ajan näyttävät JLabelit.
+     */
+    private void addFooter() {
+        this.scoreLabel = new JLabel("Score: " + this.player.getScore(), JLabel.LEFT);
+        scoreLabel.setSize(345, 40);
+        scoreLabel.setLocation(0,350);
+        add(scoreLabel);
     }
 
     private class TAdapter extends KeyAdapter {

@@ -5,8 +5,6 @@ import static com.sun.corba.se.impl.util.Utility.printStackTrace;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
 
 /**
@@ -66,7 +64,7 @@ public class Menu {
     public void prepareGui() {
 
         menuFrame = new JFrame("CollectorGame");
-        menuFrame.setSize(300, 300);
+        menuFrame.setSize(300, 290);
         menuFrame.setLayout(new GridLayout(2, 1));
 
         headerLabel = new JLabel("", JLabel.CENTER);

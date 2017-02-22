@@ -14,7 +14,7 @@ public class CollectorGame extends JFrame {
     public Player hahmo;
     public Board board;
     public Tile[][] map;
-
+    
     /**
      * Konstruktori luo UI:n.
      */
