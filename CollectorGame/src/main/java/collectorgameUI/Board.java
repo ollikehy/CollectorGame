@@ -41,7 +41,7 @@ public class Board extends JPanel implements ActionListener {
         setFocusable(true);
         addKeyListener(new TAdapter());
 
-        this.timer = new Timer(150, this);
+        this.timer = new Timer(130, this);
         timer.start();
     }
 
@@ -82,7 +82,7 @@ public class Board extends JPanel implements ActionListener {
                 int sijaintiX = x * 30;
                 int sijaintiY = y * 30;
                 if (map[y][x].getWall()) {
-                    g2d.setPaint(Color.red);
+                    g2d.setPaint(Color.darkGray);
                     g2d.drawRect(sijaintiX, sijaintiY, 30, 30);
                     g2d.fillRect(sijaintiX, sijaintiY, 30, 30);
                 } else if (map[y][x].getItem() == true && map[y][x].getPlayer() == true) {

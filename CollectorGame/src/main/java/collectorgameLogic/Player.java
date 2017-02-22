@@ -26,8 +26,10 @@ public class Player {
         this.dx = 0;
         this.dy = 0;
     }
+
     /**
      * Luokan konstruktori.
+     *
      * @param map Kartta minkä luokka saa parametrina.
      */
     public Player(Tile[][] map) {
@@ -38,13 +40,42 @@ public class Player {
         this.dx = 0;
         this.dy = 0;
     }
+
     /**
      * Palauttaa hahmon sijainnin.
+     *
      * @return Palauttaa x- ja y-koordinaatit.
      */
     public String getLocation() {
         return this.x + "," + this.y;
     }
+
+    /**
+     * Tarkistaa onko pelaajan liikkuminen sallittua.
+     * @return Palauttaa true jos on ja false jos ei ole.
+     */
+    
+    public boolean movementAllowed() {
+        if (this.dx == -1) {
+            if (map[this.y][this.x-1].getWall()) {
+                return false;
+            }
+        } else if (this.dx == 1) {
+            if (map[this.y][this.x +1].getWall()) {
+                return false;
+            }
+        } else if (this.dy == -1) {
+            if (map[this.y-1][this.x].getWall()) {
+                return false;
+            }
+        } else if (this.dy == 1) {
+            if (map[this.y+1][this.x].getWall()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     /**
      * Liikuttaa pelaajaa vasemmalle.
      */
@@ -55,6 +86,7 @@ public class Player {
             this.score -= 50;
         }
     }
+
     /**
      * Liikuttaa pelaajaa oikealle.
      */
@@ -65,6 +97,7 @@ public class Player {
             this.score -= 50;
         }
     }
+
     /**
      * Liikuttaa pelaajaa ylös.
      */
@@ -75,6 +108,7 @@ public class Player {
             this.score -= 50;
         }
     }
+
     /**
      * Liikuttaa pelaajaa alas.
      */
@@ -85,6 +119,7 @@ public class Player {
             this.score -= 50;
         }
     }
+
     /**
      * Poimii esineen jos ruudussa on esine, muuten vähentää pisteitä.
      */
@@ -100,8 +135,10 @@ public class Player {
     public int getScore() {
         return this.score;
     }
+
     /**
      * Lisää tai vähentää tuloksesta pisteitä.
+     *
      * @param score Lisättävien tai vähennettävien pisteiden määrä.
      */
     public void addScore(int score) {
@@ -111,17 +148,22 @@ public class Player {
             this.score += score;
         }
     }
+
     /**
      * Uudistaa pelaajan sijainnin ja muuttaa x- sekä y-koordinaattien arvoja.
      */
     public void updatePosition() {
-        this.map[this.y][this.x].setOrRemovePlayer(false);
-        this.x += this.dx;
-        this.y += this.dy;
-        this.map[this.y][this.x].setOrRemovePlayer(true);
+        if (movementAllowed()) {
+            this.map[this.y][this.x].setOrRemovePlayer(false);
+            this.x += this.dx;
+            this.y += this.dy;
+            this.map[this.y][this.x].setOrRemovePlayer(true);
+        }
     }
+
     /**
      * Toimii painettujen näppäinten perusteella.
+     *
      * @param e Näppäin mitä on painettu.
      */
     public void keyPressed(KeyEvent e) {
@@ -148,8 +190,10 @@ public class Player {
             pickUpItem();
         }
     }
+
     /**
      * Seuraa sitä, kun näppäin vapautuu ja toimii sen mukaan.
+     *
      * @param e Vapautunut näppäin.
      */
     public void keyReleased(KeyEvent e) {
@@ -171,16 +215,19 @@ public class Player {
         if (key == KeyEvent.VK_DOWN) {
             this.dy = 0;
         }
-        
+
         if (key == KeyEvent.VK_Z) {
             this.dx = 0;
         }
     }
+
     /**
      * Palauttaa kartan.
+     *
      * @return Kartta.
      */
     public Tile[][] returnMap() {
         return this.map;
     }
+
 }
