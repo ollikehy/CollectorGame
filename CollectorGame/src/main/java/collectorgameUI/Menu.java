@@ -64,7 +64,7 @@ public class Menu {
     public void prepareGui() {
 
         menuFrame = new JFrame("CollectorGame");
-        menuFrame.setSize(300, 290);
+        menuFrame.setSize(300, 300);
         menuFrame.setLayout(new GridLayout(2, 1));
 
         headerLabel = new JLabel("", JLabel.CENTER);

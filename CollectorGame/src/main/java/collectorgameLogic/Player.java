@@ -128,7 +128,7 @@ public class Player {
             addScore(100);
             map[this.y][this.x].removeItem();
         } else {
-            this.score -= 100;
+            this.score -= 50;
         }
     }
 

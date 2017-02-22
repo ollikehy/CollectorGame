@@ -2,9 +2,9 @@ package collectorgameUI;
 
 import collectorgameLogic.Player;
 import collectorgameLogic.Tile;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -27,6 +27,7 @@ public class Board extends JPanel implements ActionListener {
     public Player player;
     private Timer timer;
     private JLabel scoreLabel;
+    private JLabel timerLabel;
 
     /**
      * Konstruktori kutsuu ensin metodia joka luo kartan. Asettaa myös ruudun
@@ -38,18 +39,16 @@ public class Board extends JPanel implements ActionListener {
 
     private void initBoard() {
         createMap();
+        setLayout(new BorderLayout());
         this.player = new Player(this.map);
-        setBackground(Color.white);
 
         setFocusable(true);
         addKeyListener(new TAdapter());
 
-        setLayout(new FlowLayout());
-
-        this.timer = new Timer(130, this);
+        this.timer = new Timer(100, this);
         timer.start();
 
-        addFooter();
+        addScoreLabel();
     }
 
     /**
@@ -142,16 +141,15 @@ public class Board extends JPanel implements ActionListener {
         player.updatePosition();
         updateMap();
         repaint();
+        scoreLabel.setText("Score: " + this.player.getScore());
     }
-    
+
     /**
      * Luodaan alas pisteet ja ajan näyttävät JLabelit.
      */
-    private void addFooter() {
+    private void addScoreLabel() {
         this.scoreLabel = new JLabel("Score: " + this.player.getScore(), JLabel.LEFT);
-        scoreLabel.setSize(345, 40);
-        scoreLabel.setLocation(0,350);
-        add(scoreLabel);
+        add(scoreLabel, BorderLayout.PAGE_END);
     }
 
     private class TAdapter extends KeyAdapter {

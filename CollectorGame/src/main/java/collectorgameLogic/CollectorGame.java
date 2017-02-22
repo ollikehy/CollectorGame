@@ -45,7 +45,7 @@ public class CollectorGame extends JFrame {
     private void initUI() {
         this.board = new Board();
         add(board);
-        setSize(690, 350);
+        setSize(690, 370);
         setTitle("Collector Game");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
