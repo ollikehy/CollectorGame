@@ -9,3 +9,7 @@ Javalabran työ, tarkoituksena luoda peli jossa pelaaja liikuttaa "hahmoa" reiti
 [checkstyle](https://htmlpreview.github.io/?https://github.com/ollikehy/CollectorGame/blob/master/dokumentaatio/checkstyle/checkstyle.html)
 
 [pit-raportti](https://htmlpreview.github.io/?https://github.com/ollikehy/CollectorGame/blob/master/dokumentaatio/pit/201702241326/index.html)
+
+[Rakennekuvaus](dokumentaatio/rakennekuvaus.md)
+
+[Käyttöohjeet](dokumentaatio/käyttöohjeet.md)
