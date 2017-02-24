@@ -1,7 +1,7 @@
-package collectorgameUI;
+package collectorgame.ui;
 
-import collectorgameLogic.Player;
-import collectorgameLogic.Tile;
+import collectorgame.logic.Player;
+import collectorgame.logic.Tile;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;

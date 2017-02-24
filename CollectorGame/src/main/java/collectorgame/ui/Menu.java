@@ -1,6 +1,6 @@
-package collectorgameUI;
+package collectorgame.ui;
 
-import collectorgameLogic.CollectorGame;
+import collectorgame.logic.CollectorGame;
 import static com.sun.corba.se.impl.util.Utility.printStackTrace;
 import java.awt.*;
 import java.awt.event.*;
@@ -53,6 +53,7 @@ public class Menu {
     /**
      * Metodi avaa uuden ikkunan jossa näkyy mallikartta ilman, että itse peli
      * alkaa.
+     * @throws java.io.IOException Heittää IOExceptionin.
      */
     public void printMap() throws IOException {
         Map map = new Map();

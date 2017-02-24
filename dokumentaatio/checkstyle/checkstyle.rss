@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2017</copyright>
     <item>
-      <title>File: 6,
+      <title>File: 7,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -46,7 +46,7 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#collectorgame.Tile.java">collectorgame/Tile.java</a>
+                  <a href="${project.url}/checkstyle.html#collectorgame.ui.Board.java">collectorgame/ui/Board.java</a>
                 </td>
                 <td>
                   0
@@ -60,7 +60,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#collectorgame.CollectorGame.java">collectorgame/CollectorGame.java</a>
+                  <a href="${project.url}/checkstyle.html#collectorgame.ui.Menu.java">collectorgame/ui/Menu.java</a>
                 </td>
                 <td>
                   0
@@ -74,7 +74,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#collectorgame.Board.java">collectorgame/Board.java</a>
+                  <a href="${project.url}/checkstyle.html#collectorgame.logic.CollectorGame.java">collectorgame/logic/CollectorGame.java</a>
                 </td>
                 <td>
                   0
@@ -88,7 +88,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#collectorgame.Player.java">collectorgame/Player.java</a>
+                  <a href="${project.url}/checkstyle.html#collectorgame.logic.Player.java">collectorgame/logic/Player.java</a>
                 </td>
                 <td>
                   0
@@ -102,7 +102,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#collectorgame.Menu.java">collectorgame/Menu.java</a>
+                  <a href="${project.url}/checkstyle.html#collectorgame.logic.Tile.java">collectorgame/logic/Tile.java</a>
                 </td>
                 <td>
                   0
@@ -116,7 +116,21 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#collectorgame.Main.java">collectorgame/Main.java</a>
+                  <a href="${project.url}/checkstyle.html#collectorgame.logic.Main.java">collectorgame/logic/Main.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#collectorgame.ui.Map.java">collectorgame/ui/Map.java</a>
                 </td>
                 <td>
                   0

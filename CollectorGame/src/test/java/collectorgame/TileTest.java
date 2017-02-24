@@ -1,6 +1,6 @@
 package collectorgame;
 
-import collectorgameLogic.Tile;
+import collectorgame.logic.Tile;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

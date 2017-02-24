@@ -1,6 +1,6 @@
-package collectorgameLogic;
+package collectorgame.logic;
 
-import collectorgameUI.Board;
+import collectorgame.ui.Board;
 import javax.swing.JFrame;
 
 /**
@@ -11,7 +11,6 @@ import javax.swing.JFrame;
  */
 public class CollectorGame extends JFrame {
 
-    public Player hahmo;
     public Board board;
     public Tile[][] map;
     
@@ -30,13 +29,6 @@ public class CollectorGame extends JFrame {
      */
     public CollectorGame(boolean esim) {
         initUI();
-    }
-
-    /**
-     * Metodi luo hahmon ja käynnistää pelin.
-     */
-    public void start() {
-        this.map = board.getMap();
     }
 
     /**

@@ -1,4 +1,4 @@
-package collectorgameLogic;
+package collectorgame.logic;
 
 import java.awt.event.KeyEvent;
 
@@ -15,17 +15,6 @@ public class Player {
     public int dx;
     public int dy;
     public Tile[][] map;
-
-    /**
-     * Luokan konstruktori joka ei saa karttaa parametrinaan.
-     */
-    public Player() {
-        this.x = 1;
-        this.y = 0;
-        this.score = 0;
-        this.dx = 0;
-        this.dy = 0;
-    }
 
     /**
      * Luokan konstruktori.
@@ -52,71 +41,58 @@ public class Player {
 
     /**
      * Tarkistaa onko pelaajan liikkuminen sallittua.
+     *
      * @return Palauttaa true jos on ja false jos ei ole.
      */
-    
     public boolean movementAllowed() {
         if (this.dx == -1) {
-            if (map[this.y][this.x-1].getWall()) {
+            if (map[this.y][this.x - 1].getWall()) {
                 return false;
             }
         } else if (this.dx == 1) {
-            if (map[this.y][this.x +1].getWall()) {
+            if (map[this.y][this.x + 1].getWall()) {
                 return false;
             }
         } else if (this.dy == -1) {
-            if (map[this.y-1][this.x].getWall()) {
+            if (map[this.y - 1][this.x].getWall()) {
                 return false;
             }
         } else if (this.dy == 1) {
-            if (map[this.y+1][this.x].getWall()) {
+            if (map[this.y + 1][this.x].getWall()) {
                 return false;
             }
         }
         return true;
     }
-
-    /**
-     * Liikuttaa pelaajaa vasemmalle.
-     */
-    public void movePlayerLeft() {
-        if (this.x - 1 > 0 && !map[this.y][this.x - 1].getWall()) {
-            dx = -1;
-        } else {
-            this.score -= 50;
-        }
-    }
-
-    /**
-     * Liikuttaa pelaajaa oikealle.
-     */
-    public void movePlayerRight() {
-        if (this.x + 1 < 22 && !map[this.y][this.x + 1].getWall()) {
-            dx = 1;
-        } else {
-            this.score -= 50;
-        }
-    }
-
-    /**
-     * Liikuttaa pelaajaa ylös.
-     */
-    public void movePlayerUp() {
-        if (this.y - 1 > 0 && !map[this.y - 1][this.x].getWall()) {
-            dy = -1;
-        } else {
-            this.score -= 50;
-        }
-    }
-
-    /**
-     * Liikuttaa pelaajaa alas.
-     */
-    public void movePlayerDown() {
-        if (this.y + 1 < 11 && !map[this.y + 1][this.x].getWall()) {
-            dy = 1;
-        } else {
-            this.score -= 50;
+/**
+ * Liikuttaa pelaajaa annettuun suuntaan.
+ * @param string Annettu suunta.
+ */
+    public void movePlayer(String string) {
+        if (string.equals("l")) {
+            if (this.x - 1 > 0 && !map[this.y][this.x - 1].getWall()) {
+                dx = -1;
+            } else {
+                this.score -= 50;
+            }
+        } else if (string.equals("r")) {
+            if (this.x + 1 < 22 && !map[this.y][this.x + 1].getWall()) {
+                dx = 1;
+            } else {
+                this.score -= 50;
+            }
+        } else if (string.equals("u")) {
+            if (this.y - 1 > 0 && !map[this.y - 1][this.x].getWall()) {
+                dy = -1;
+            } else {
+                this.score -= 50;
+            }
+        } else if (string.equals("d")) {
+            if (this.y + 1 < 11 && !map[this.y + 1][this.x].getWall()) {
+                dy = 1;
+            } else {
+                this.score -= 50;
+            }
         }
     }
 
@@ -171,21 +147,17 @@ public class Player {
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_LEFT) {
-            movePlayerLeft();
+            movePlayer("l");
         }
-
         if (key == KeyEvent.VK_RIGHT) {
-            movePlayerRight();
+            movePlayer("r");
         }
-
         if (key == KeyEvent.VK_UP) {
-            movePlayerUp();
+            movePlayer("u");
         }
-
         if (key == KeyEvent.VK_DOWN) {
-            movePlayerDown();
+            movePlayer("d");
         }
-
         if (key == KeyEvent.VK_Z) {
             pickUpItem();
         }
@@ -202,21 +174,13 @@ public class Player {
 
         if (key == KeyEvent.VK_LEFT) {
             this.dx = 0;
-        }
-
-        if (key == KeyEvent.VK_RIGHT) {
+        } else if (key == KeyEvent.VK_RIGHT) {
             this.dx = 0;
-        }
-
-        if (key == KeyEvent.VK_UP) {
+        } else if (key == KeyEvent.VK_UP) {
             this.dy = 0;
-        }
-
-        if (key == KeyEvent.VK_DOWN) {
+        } else if (key == KeyEvent.VK_DOWN) {
             this.dy = 0;
-        }
-
-        if (key == KeyEvent.VK_Z) {
+        } else if (key == KeyEvent.VK_Z) {
             this.dx = 0;
         }
     }
@@ -229,5 +193,4 @@ public class Player {
     public Tile[][] returnMap() {
         return this.map;
     }
-
 }

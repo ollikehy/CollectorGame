@@ -1,4 +1,4 @@
-package collectorgameLogic;
+package collectorgame.logic;
 
 import java.util.Random;
 
@@ -61,6 +61,10 @@ public class Tile {
         } else {
             this.item = false;
         }
+    }
+    
+    public void setItem() {
+        this.item = true;
     }
 
     /**

@@ -1,11 +1,11 @@
-package collectorgameUI;
+package collectorgame.ui;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,15 +13,22 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 /**
+ * Luokassa luodaan karttaikkuna päävalikkoon.
  *
  * @author keolli
  */
 public class Map {
 
     JFrame frame;
-    
+
+    /**
+     * Konstruktori luo ikkunan mihini tuo lataa kartan ja lisää painikkeen.
+     *
+     * @throws IOException Heittää exceptionin jos tiedostoa ei löydy.
+     */
     public Map() throws IOException {
-        BufferedImage img = ImageIO.read(new File("src/main/resources/resources/screenshot.png"));
+        InputStream is = getClass().getClassLoader().getResourceAsStream("screenshot.png");
+        BufferedImage img = ImageIO.read(is);
         ImageIcon icon = new ImageIcon(img);
         this.frame = new JFrame("Esimerkki kartta");
         frame.setLayout(new FlowLayout());
@@ -37,7 +44,7 @@ public class Map {
         button.addActionListener(new ButtonClickListener());
         button.setText("Main Menu");
         frame.add(button);
-        
+
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }

@@ -9,6 +9,6 @@ Päivä | Tunnit | Kuvaus
 9.02.2017 | 2h | Swingin opettelua, sekä laitoin päävalikolle graafisen toiminnallisuuden kuntoon.
 10.02.2017 | 4,5h | Pelikentän tekemistä ja muutamien tominnallisuuksien muokkaamista. Pit korjattu siten, että enää näkyvät vain testattavat luokat.
 17.02.2017 | 5h | Hahmon liikkuminen, esineiden poimiminen ja muutama muu toiminnallisuus kuntoon. Pit näyttää edelleen muutaman luokan jota ei testata ja joissain luokissa testattavia metodeja on vain pieni osa.
-20.02.2017 | 2,5h| Kartta ominaisuuden toiminta nyt tarkoituksenmukainen, gitignore korjattu.
-22.02.2017 | 2,5h| Liikkuminen korjattu sekä pisteet lisätty alareunaan. Myös kartan väri muutettu vähemmän silmiä ärsyttäväksi.
-
+20.02.2017 | 2,5h | Kartta ominaisuuden toiminta nyt tarkoituksenmukainen, gitignore korjattu.
+22.02.2017 | 2,5h | Liikkuminen korjattu sekä pisteet lisätty alareunaan. Myös kartan väri muutettu vähemmän silmiä ärsyttäväksi.
+24.02.2017 | 2,5h | JAR-tiedosto luotu, testausta korjattu, Checkstyle uusittu, rakennekuvaus sekä käyttöohjeet luotu.
