@@ -12,3 +12,4 @@ Päivä | Tunnit | Kuvaus
 20.02.2017 | 2,5h | Kartta ominaisuuden toiminta nyt tarkoituksenmukainen, gitignore korjattu.
 22.02.2017 | 2,5h | Liikkuminen korjattu sekä pisteet lisätty alareunaan. Myös kartan väri muutettu vähemmän silmiä ärsyttäväksi.
 24.02.2017 | 2,5h | JAR-tiedosto luotu, testausta korjattu, Checkstyle uusittu, rakennekuvaus sekä käyttöohjeet luotu.
+3.03.2017 | 5h | HTML-javadoc luotu, Github release tehty, tulosten tallentaminen lisätty sekä huipputulosten katsominen lisätty.
