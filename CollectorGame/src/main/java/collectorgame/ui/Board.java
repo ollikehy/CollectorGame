@@ -12,9 +12,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowEvent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import sun.java2d.opengl.OGLRenderQueue;
 
 /**
  * Luokka luo pelikentän.
@@ -45,7 +47,7 @@ public class Board extends JPanel implements ActionListener {
         setFocusable(true);
         addKeyListener(new TAdapter());
 
-        this.timer = new Timer(100, this);
+        this.timer = new Timer(150, this);
         timer.start();
 
         addScoreLabel();
@@ -141,15 +143,26 @@ public class Board extends JPanel implements ActionListener {
         player.updatePosition();
         updateMap();
         repaint();
-        scoreLabel.setText("Score: " + this.player.getScore());
+        scoreLabel.setText("Pisteet: " + this.player.getScore());
+        checkIfEnd();
     }
 
     /**
      * Luodaan alas pisteet ja ajan näyttävät JLabelit.
      */
     private void addScoreLabel() {
-        this.scoreLabel = new JLabel("Score: " + this.player.getScore(), JLabel.LEFT);
+        this.scoreLabel = new JLabel("Pisteet: " + this.player.getScore(), JLabel.LEFT);
         add(scoreLabel, BorderLayout.PAGE_END);
+    }
+    /**
+     * Tarkistetaan onko pelaaja maalissa, jos on luodaan Scoreboard jossa tulos talletetaan.
+     */
+    public void checkIfEnd() {
+        if (player.getLocation().equals("21,10")) {
+            timer.stop();
+            Scoreboard sb = new Scoreboard();
+            sb.saveScore(player.score);
+        }
     }
 
     private class TAdapter extends KeyAdapter {

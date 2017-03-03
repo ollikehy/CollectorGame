@@ -76,7 +76,7 @@
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>  <em class="jxr_javadoccomment"> * Liikuttaa pelaajaa annettuun suuntaan.</em>
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>  <em class="jxr_javadoccomment"> * @param string Annettu suunta.</em>
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L71" href="#L71">71</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> movePlayer(String string) {
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> movePlayer(String string) {
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>          <strong class="jxr_keyword">if</strong> (string.equals(<span class="jxr_string">"l"</span>)) {
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>              <strong class="jxr_keyword">if</strong> (<strong class="jxr_keyword">this</strong>.x - 1 &gt; 0 &amp;&amp; !map[<strong class="jxr_keyword">this</strong>.y][<strong class="jxr_keyword">this</strong>.x - 1].getWall()) {
 <a class="jxr_linenumber" name="L74" href="#L74">74</a>                  dx = -1;

@@ -4,7 +4,10 @@ import collectorgame.logic.CollectorGame;
 import static com.sun.corba.se.impl.util.Utility.printStackTrace;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 /**
@@ -124,7 +127,12 @@ public class Menu {
             if (command.equals("PLAY")) {
                 gameOn();
             } else if (command.equals("SCORE")) {
-                score();
+                Scoreboard sb = new Scoreboard();
+                try {
+                    sb.showScores();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
             } else if (command.equals("MAP")) {
                 try {
                     printMap();

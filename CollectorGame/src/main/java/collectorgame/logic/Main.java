@@ -6,7 +6,7 @@ public class Main {
 
     /**
      * Luo menu olion ja käynnistää pelin.  
-     * @param args 
+     * @param args args.
      */
     public static void main(String[] args) {
         Menu mainMenu = new Menu();

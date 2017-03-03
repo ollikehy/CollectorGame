@@ -2,7 +2,7 @@
 
 **Käyttäjät:** Yksi käyttäjä kerrallaan, peli on yksinpeli.
 
-**Kaikkien käyttäjien toiminnot:** Pelin pelaaminen, oman tuloksen tallentaminen pelin lopussa ja huipputulos listan selaaminen.
+**Kaikkien käyttäjien toiminnot:** Pelin pelaaminen, oman tuloksen tallentaminen pelin lopussa, huipputulos listan selaaminen ja esimerkki pelikartan katsominen.
  
 **Luokkakaavio**
 

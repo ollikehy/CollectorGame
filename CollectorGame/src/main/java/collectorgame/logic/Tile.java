@@ -63,6 +63,9 @@ public class Tile {
         }
     }
     
+    /**
+     * Asettaa esineen ruutuun.
+     */
     public void setItem() {
         this.item = true;
     }
